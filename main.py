@@ -1,5 +1,5 @@
 import pygame
-from constants import *
+from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 
 def main():
     pygame.init
@@ -10,6 +10,9 @@ def main():
 
     while True:
         screen.fill((0, 0, 0))
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return
         pygame.display.flip()
 
 if __name__ == "__main__":
